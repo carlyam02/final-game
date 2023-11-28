@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ground
+  - nextLine
+  - FinishLine
+  - Virus
   layers:
   - Default
   - TransparentFX
