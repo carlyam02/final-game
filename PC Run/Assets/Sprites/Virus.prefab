@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7836674089138611315}
   - component: {fileID: 907958123049773554}
   - component: {fileID: 6072391609550847993}
-  - component: {fileID: 4158905542950721587}
   - component: {fileID: 1451333414181958283}
+  - component: {fileID: 8321909726048916652}
   m_Layer: 0
   m_Name: Virus
   m_TagString: Virus
@@ -114,7 +114,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!61 &4158905542950721587
+--- !u!114 &1451333414181958283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778489364407901901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a55527e4457624189c3fc957ae794f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virusGenerator: {fileID: 0}
+--- !u!61 &8321909726048916652
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,16 +172,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &1451333414181958283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3778489364407901901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a55527e4457624189c3fc957ae794f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  virusGenerator: {fileID: 0}

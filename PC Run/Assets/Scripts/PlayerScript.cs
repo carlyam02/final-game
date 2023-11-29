@@ -14,39 +14,51 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D RB;
 
     public Text ScoreTxt;
+    public AudioSource audioSource; 
 
-    private void Awake() {
+    private void Awake()
+    {
         RB = GetComponent<Rigidbody2D>();
         score = 0;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            if(isGrounded == true) {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isGrounded == true)
+            {
                 RB.AddForce(Vector2.up * JumpForce);
-                isGrounded =  false;
-            } 
-        }  
-
-        if(isAlive) {
-            score += Time.deltaTime * 4;
-            ScoreTxt.text = "SCORE : " + score.ToString("F");
-        }     
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision) {
-        if(collision.gameObject.CompareTag("ground")) {
-            if(isGrounded == false) {
-                isGrounded =  true;
+                isGrounded = false;
             }
         }
 
-        if(collision.gameObject.CompareTag("Virus")) {
+        if (isAlive)
+        {
+            score += Time.deltaTime * 4;
+            ScoreTxt.text = "SCORE : " + score.ToString("F");
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            if (isGrounded == false)
+            {
+                isGrounded = true;
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Virus"))
+        {
             isAlive = false;
             Time.timeScale = 0;
+
+            audioSource.Play();
         }
     }
 }
-
