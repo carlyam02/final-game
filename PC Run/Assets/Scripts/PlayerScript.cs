@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -55,10 +56,18 @@ public class PlayerScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Virus"))
         {
-            isAlive = false;
-            Time.timeScale = 0;
-
             audioSource.Play();
+
+            StartCoroutine(GameOver());
         }
     }
+
+    private IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(audioSource.clip.length-1);
+
+        SceneManager.LoadScene("MainMenu");
+    }
+
+
 }
