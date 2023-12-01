@@ -14,7 +14,7 @@ public class VirusScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.gameObject.CompareTag("nextLine")) {
-            virusGenerator.GenerateNextVirusWithGap();
+            virusGenerator.GenerateVirusWithSpace();
         }
 
         if(collision.gameObject.CompareTag("FinishLine")) {

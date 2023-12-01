@@ -10,15 +10,14 @@ public class VirusGenerator : MonoBehaviour
 
     public float SpeedMultiplier;
 
-    // Start is called before the first frame update
     void Awake()
     {
         currentSpeed = MinSpeed;
         generateVirus();
     }
 
-    public void GenerateNextVirusWithGap() {
-        float randomWait = Random.Range(0.1f, 1.2f);
+    public void GenerateVirusWithSpace() {
+        float randomWait = Random.Range(0.7f, 1.5f);
         Invoke("generateVirus", randomWait);
     }
 

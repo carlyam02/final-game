@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8367415816293020644}
   - component: {fileID: 480142919998890499}
   m_Layer: 0
-  m_Name: selectedskin
+  m_Name: selectedskin - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
